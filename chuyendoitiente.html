@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi tiền tệ</title>
+</head>
+<body>
+<table>
+    <tr align="center">
+        <th>Amount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+    </tr>
+    <tr>
+        <td><input type="number" id='x' value="" placeholder="nhập số tiền"></td>
+        <td>
+            <select id="1" style="width: 120px">
+                <option value="Việt Nam">Việt Nam</option>
+                <option value="USD">USD</option>
+            </select>
+        </td>
+        <td>
+            <select id="2" style="width:100px">
+                <option value="USD">USD</option>
+                <option value="Việt Nam">Việt Nam</option>
+            </select>
+        </td>
+        <td>
+            <button onclick="hienKetqua()" style="color: white;background-color: blue">Covert</button>
+        </td>
+    </tr>
+    <tr >
+        <td id="y" style="color: blue"></td>
+    </tr>
+</table>
+<script>
+    function hienKetqua() {
+        let select1 = document.getElementById("1").value
+        let select2 = document.getElementById("2").value
+        let quydoi = parseFloat(document.getElementById("x").value)
+        if (select1 == select2) {
+            document.getElementById("y").innerHTML = "Xin chọn lại!"
+        }
+        if (select1 == "Việt Nam" && select2 == "USD") {
+            document.getElementById("y").innerHTML = "Result:" + quydoi / 23000
+        }
+        if(select1=="USD"&& select2=="Việt Nam")
+        {
+            document.getElementById("y").innerHTML="Result:"+quydoi*23000
+        }
+    }
+
+
+</script>
+</body>
+</html>
